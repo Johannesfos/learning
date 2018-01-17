@@ -1,0 +1,8 @@
+#headerWrap {
+
+    position: absolute;
+    margin: 0;
+    height: 90px;
+    width: 100%;
+    background-color: indianred;
+}
