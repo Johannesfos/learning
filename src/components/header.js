@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
+
+//CSS files
 import '../css/header.css';
+
+//components
+import Navbar from './navbar';
+
 
 
 class Header extends Component {
@@ -7,6 +13,7 @@ class Header extends Component {
     return (
       <div id="headerWrap">
             <h1>My fun project</h1>
+            <Navbar />
       </div>
     );
   }
