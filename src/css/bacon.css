@@ -1,0 +1,31 @@
+#baconwrap {
+    position: relative;
+    border: solid black 2px;
+    margin: 25px;
+    height: auto;
+}
+
+#ingredients1 {
+    border: solid black 1px;
+    margin: 1px;
+    width:400px;;
+    height: 400px;
+    position: relative;
+    float:left;
+}
+#ingredients2 {
+    border: solid black 1px;
+    margin: 1px;
+    width:400px;;
+    height: 400px;
+    position: relative;
+    float: right;
+}
+#ingredients3 {
+    border: solid black 1px;
+    margin: 1px auto;
+    width:400px;;
+    height: 400px;
+    position: relative;
+    
+}

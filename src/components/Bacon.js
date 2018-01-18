@@ -4,15 +4,32 @@ import React, { Component } from 'react';
 import '../css/bacon.css';
 
 //components
-import Bacon from './navbar';
 
 
 
-class Header extends Component {
+
+class Bacon extends Component {
   render() {
     return (
-      <div>
-    
+      <div id="baconwrap">
+        <div id="ingredients1">
+          <ul>
+            <li>kjøtt</li>
+            <li>kylling</li>
+          </ul>
+        </div>
+        <div id="ingredients2">
+          <ul>
+            <li>kjøtt</li>
+            <li>kylling</li>
+          </ul>
+        </div>
+        <div id="ingredients3">
+          <ul>
+            <li>kjøtt</li>
+            <li>kylling</li>
+          </ul>
+        </div>
       </div>
     );
   }

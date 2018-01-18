@@ -7,6 +7,8 @@
     height: 95px;
     width: 100%;
     background-color: indianred;
+    border: solid black 1px;
+    border-top: none;
 }
 
 #navigate {
@@ -15,14 +17,15 @@
     
 }
 
-ul{
+#navigate ul{
     display: inline-block;
-    position: absolute;
     list-style-type: none;
+    position: absolute;
+    list-style: none;
     overflow: hidden;
     margin: 0;
 }
-li{
+#navigate li{
     cursor: pointer;
     float: left;
     margin-left: 20px;
@@ -32,10 +35,12 @@ li{
     font-weight: bold;
     text-align: center;
     background-color: antiquewhite;
-    opacity: 70%
+    border-radius: 4px;
+    border: solid black 2px;
+
 }
 
-li:hover {
+#navigate li:hover {
     background-color: rgb(255, 224, 183);
     animation: menu 2s ease-in-out 0s infinite;
     opacity: 100%;
