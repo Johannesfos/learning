@@ -39,7 +39,7 @@ class Bacon extends Component {
        return(
             <div>
             <div id="ingredients">
-                <h3 id="textheader">{this.state.msg}</h3>
+                <h3 id="textheader">{this.state.msg} - box nr {this.props.index}</h3>
                 <div id="textfield">{this.state.usermsg}</div>
                 <button onClick={this.editform.bind(this)} id="edit">EDIT</button> <button id="remove" onClick={this.removebox.bind(this)}>REMOVE</button>   
             </div>
