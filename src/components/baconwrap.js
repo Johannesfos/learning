@@ -23,6 +23,9 @@ class Baconwrap extends Component {
 
   removebox(index){
     console.log("removing box nr " + index)
+    //var arr = this.state.modules;
+    //arr = arr.splice(index, 1);
+    //this.setState({modules: arr});
   }
 
   newBacon(){
