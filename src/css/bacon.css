@@ -111,5 +111,6 @@ background-color: rgb(3, 190, 3);
 
 #textheader{
     position: absolute;
+    left: 10px;
 
 }

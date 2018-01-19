@@ -14,6 +14,7 @@ class Baconwrap extends Component {
   constructor(){
     super();
     this.newBacon = this.newBacon.bind(this);
+    this.removebox = this.removebox.bind(this);
 
     this.state = {
       modules: [
@@ -25,21 +26,19 @@ class Baconwrap extends Component {
 
   removebox(index){
     console.log("removing box nr " + index)
-    var arr = this.state.modules.splice(index,1);
+    var arr = this.state.modules.filter( item => item !== index );
     console.log(arr);
     this.setState({modules: arr});
   }
 
   newBacon(){
     this.setState({
-      modules: this.state.modules.concat(<Bacon deletebacon={this.removebox.bind(this)}  key={this.state.index} index={this.state.index}/>),
+      modules: this.state.modules.concat(<Bacon deletebacon={this.removebox}  key={this.state.index} index={this.state.index}/>),
       index: this.state.index + 1,
     })
   }
 
-  update(){
-    
-  }
+
 
 
   render() {
