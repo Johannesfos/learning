@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from "./components/header";
-import Bacon from './components/Bacon';
+import Bacon from './components/baconwrap';
 
 class App extends Component {
   render() {
