@@ -1,76 +1,68 @@
-import React, { Component } from 'react';
-
-//CSS files
-import '../css/bacon.css';
-
-//components
-
-
+import React, { Component } from 'react'
+import '../css/bacon.css'
 
 class Bacon extends Component {
-
-    constructor(props){
-        super(props);
-        this.state = {
-            editing: false,
-            msg: 'Text editor',
-            usermsg: 'Whats on your mind?'
-        };
-    };
-   
-    removebox(){
-        this.props.deletebacon(this.props.index);
+  constructor(props) {
+    super(props)
+    this.state = {
+      editing: false,
+      msg: 'Text editor',
+      usermsg: 'Whats on your mind?',
     }
+  }
 
-    editform(){
-       this.setState({editing: true})
-   }
+  removebox() {
+    this.props.deletebacon(this.props.index)
+  }
 
-    saveform(){
-        var text = this.refs.newText.value;
-        this.setState({
-           editing: false,
-           usermsg: text
-        })
-       
-   }
+  editform() {
+    this.setState({ editing: true })
+  }
 
-   renderNormal() {
-       return(
-            <div>
-            <div id="ingredients">
-                <h3 id="textheader">{this.state.msg} - box nr {this.props.index}</h3>
-                <div id="textfield">{this.state.usermsg}</div>
-                <button onClick={this.editform.bind(this)} id="edit">EDIT</button> <button id="remove" onClick={this.removebox.bind(this)}>REMOVE</button>   
-            </div>
-            </div>
-       );
-   }
+  renderNormal() {
+    return (
+      <div>
+        <div className="ingredients">
+          <h3 className="textheader">
+            {this.state.msg} - box nr {this.props.index}
+          </h3>
 
-   renderEdit(){
-        return(
-            <div>
-            <div id="ingredients">
-                <h3 id="textheader">{this.state.msg}</h3>
-                <textarea ref="newText" defaultValue={this.state.usermsg} id="textmsg"></textarea>
-                <button onClick={this.saveform.bind(this)} id="save">Save</button>
-            </div>
-            </div>
-        );
-   }
+          <div className="textfield">{this.state.usermsg}</div>
+          <div className="actions">
+            <button onClick={this.editform.bind(this)}>EDIT</button>
+            <button className="delete" onClick={() => this.props.onDelete(this.props.index)}>
+              REMOVE
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  renderEdit() {
+    return (
+      <div>
+        <div className="ingredients">
+          <h3 className="textheader">{this.state.msg}</h3>
+          <textarea
+            ref="newText"
+            value={this.state.usermsg}
+            onChange={event => this.setState({ usermsg: event.target.value })}
+            className="textfield-edit"
+          />
+          <div className="actions">
+            <button onClick={() => this.setState({ editing: false })} id="save">
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   render() {
-    
-    
-
-        if(this.state.editing){
-            return this.renderEdit();
-        }else{
-            return this.renderNormal();
-        };
-
-
+    return this.state.editing ? this.renderEdit() : this.renderNormal()
   }
 }
 
-export default Bacon;
+export default Bacon
